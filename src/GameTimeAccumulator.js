@@ -1,3 +1,4 @@
+'use strict';
 export default class GameTimeAccumulator {
     constructor(stepFn = function() {}, drawFn = function() {}, stepSize = 60) {
         // Check parameters and throw detailed Error if invalid
@@ -48,5 +49,3 @@ export default class GameTimeAccumulator {
         cancelAnimationFrame(this.tickFn.bind(this));
     }
 }
-
-'use strict';

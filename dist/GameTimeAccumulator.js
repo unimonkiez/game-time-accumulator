@@ -1,5 +1,4 @@
 'use strict';
-
 Object.defineProperty(exports, '__esModule', {
     value: true
 });
@@ -75,6 +74,4 @@ var GameTimeAccumulator = (function () {
 })();
 
 exports['default'] = GameTimeAccumulator;
-
-'use strict';
 module.exports = exports['default'];

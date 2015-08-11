@@ -2,14 +2,29 @@
   "name": "game-time-accumulator",
   "version": "1.0.0",
   "description": "game-time-accumulator class for creating a game",
-  "main": "dist/index.js",
+  "main": "dist/GameTimeAccumulator.js",
   "dependencies": {},
   "devDependencies": {
     "babel": "^5.8.21"
   },
   "engines": {},
   "scripts": {
-    "build": "babel -d dist/ src/",
-    "prepublish": "npm run build"
-  }
+    "build": "babel -d dist/ src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuvalsaraf/game-time-accumulator.git"
+  },
+  "keywords": [
+    "time",
+    "accumulator",
+    "game",
+    "es6"
+  ],
+  "author": "Yuval Saraf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuvalsaraf/game-time-accumulator/issues"
+  },
+  "homepage": "https://github.com/yuvalsaraf/game-time-accumulator#readme"
 }
