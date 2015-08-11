@@ -1,6 +1,6 @@
 'use strict';
 export default class GameTimeAccumulator {
-    constructor(stepFn = function() {}, drawFn = function() {}, stepSize = 60) {
+    constructor(stepFn = function() {}, drawFn = function() {}, stepSize = 16) {
         // Check parameters and throw detailed Error if invalid
         if (typeof stepFn !== 'function') {
             throw new Error(`Game.constructor(): Second arg, stepFn, must be a Function, got ${typeof stepFn}.`);
