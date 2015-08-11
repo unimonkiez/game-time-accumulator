@@ -1,4 +1,6 @@
 'use strict';
+const raf = require('raf');
+
 export default class GameTimeAccumulator {
     constructor(stepFn = function() {}, drawFn = function() {}, stepSize = 16) {
         // Check parameters and throw detailed Error if invalid
@@ -40,12 +42,12 @@ export default class GameTimeAccumulator {
 
         this.drawFn(deltaTime);
         // Request an animation frame to invoke tickFn again
-        requestAnimationFrame(this.tickFn.bind(this));
+        this.start();
     }
     start() {
-        requestAnimationFrame(this.tickFn.bind(this));
+        this.handle = raf(this.tickFn.bind(this));
     }
     stop() {
-        cancelAnimationFrame(this.tickFn.bind(this));
+        raf.cancel(this.handle);
     }
 }

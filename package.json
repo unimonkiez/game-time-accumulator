@@ -5,11 +5,13 @@
   "main": "dist/GameTimeAccumulator.js",
   "dependencies": {},
   "devDependencies": {
-    "babel": "^5.8.21"
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.1",
+    "raf": "^3.1.0"
   },
   "engines": {},
   "scripts": {
-    "build": "babel -d dist/ src/"
+    "build": "browserify src/GameTimeAccumulator.js -t babelify --outfile dist/GameTimeAccumulator.js"
   },
   "repository": {
     "type": "git",
