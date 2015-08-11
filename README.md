@@ -2,7 +2,7 @@
 A great class to manage updates to your own game using time accumulator principle.
 
 ### Install
-```npm install game-time-accumulator```.
+```npm install game-time-accumulator``` or ```bower install game-time-accumulator```.
 
 ### Use
 ```
