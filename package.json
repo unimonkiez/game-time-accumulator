@@ -1,0 +1,15 @@
+{
+  "name": "game-time-accumulator",
+  "version": "1.0.0",
+  "description": "game-time-accumulator class for creating a game",
+  "main": "dist/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.8.21"
+  },
+  "engines": {},
+  "scripts": {
+    "build": "babel -d dist/ src/",
+    "prepublish": "npm run build"
+  }
+}
