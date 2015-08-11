@@ -30,9 +30,12 @@ game.start();
 
 ### Parameters
 **stepFn** - (Function, default noop) - Run every step loop (you define the time)
+
 **drawFn** - (Function, default noop) - Run every requestAnimationFrame loop (system defines the time)
+
 **stepSize** - (Number, default 16 - ~60fps) - Milliseconds of step to loop
 
 ## Functions
 ```start()``` - Start the game
+
 ```stop()``` - Start the game
