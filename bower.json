@@ -1,6 +1,6 @@
 {
   "name": "game-time-accumulator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/yuvalsaraf/game-time-accumulator",
   "description": "A great class to manage updates to your own game using time accumulator principle",
   "main": "dist/game-time-accumulator.js",
