@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/yuvalsaraf/game-time-accumulator",
   "description": "A great class to manage updates to your own game using time accumulator principle",
-  "main": "dist/GameTimeAccumulator.js",
+  "main": "dist/game-time-accumulator.js",
   "keywords": [
     "es6",
     "time",
