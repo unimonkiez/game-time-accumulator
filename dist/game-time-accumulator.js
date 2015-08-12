@@ -65,6 +65,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var raf = __webpack_require__(1);
 	
+	var tickFn = function tickFn(time) {
+	    // requestAnimationFrame's callback gives a very high resolution
+	    // timestamp (DOMHighResTimeStamp) as an argument. The timestamp
+	    // is accurate to a microsecond so we no longer need, nor want to
+	    // call Date.now as it is only accurate to the millisecond.
+	
+	    // On the first tick delta time should be 0.
+	    var deltaTime = time - (this._time || time);
+	    this._time = time;
+	    // Add delta time to our accumulator, iterate over the steps we
+	    // can do, and carry the leftovers over to the next frame.
+	    this._accumulator += deltaTime;
+	    while (this._accumulator >= this.stepSize) {
+	        this.stepFn(this.stepSize);
+	        this._accumulator -= this.stepSize;
+	    }
+	
+	    this.drawFn(deltaTime);
+	    // Request an animation frame to invoke tickFn again
+	    if (this._running) {
+	        this._handle = raf(tickFn.bind(this));
+	    }
+	};
+	
 	var GameTimeAccumulator = (function () {
 	    function GameTimeAccumulator() {
 	        var stepFn = arguments.length <= 0 || arguments[0] === undefined ? function () {} : arguments[0];
@@ -89,48 +113,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.stepSize = stepSize;
 	
 	        // Default properties
-	        this.time = undefined;
-	        this.accumulator = 0.0;
-	        this.running = false;
+	        this._time = undefined;
+	        this._accumulator = 0.0;
+	        this._running = false;
 	    }
 	
 	    _createClass(GameTimeAccumulator, [{
-	        key: 'tickFn',
-	        value: function tickFn(time) {
-	            // requestAnimationFrame's callback gives a very high resolution
-	            // timestamp (DOMHighResTimeStamp) as an argument. The timestamp
-	            // is accurate to a microsecond so we no longer need, nor want to
-	            // call Date.now as it is only accurate to the millisecond.
-	
-	            // On the first tick delta time should be 0.
-	            var deltaTime = time - (this.time || time);
-	            this.time = time;
-	            // Add delta time to our accumulator, iterate over the steps we
-	            // can do, and carry the leftovers over to the next frame.
-	            this.accumulator += deltaTime;
-	            while (this.accumulator >= this.stepSize) {
-	                this.stepFn(this.stepSize);
-	                this.accumulator -= this.stepSize;
-	            }
-	
-	            this.drawFn(deltaTime);
-	            // Request an animation frame to invoke tickFn again
-	            if (this.running) {
-	                this.handle = raf(this.tickFn.bind(this));
-	            }
-	        }
-	    }, {
 	        key: 'start',
 	        value: function start() {
-	            this.running = true;
-	            this.handle = raf(this.tickFn.bind(this));
+	            this._running = true;
+	            this._handle = raf(tickFn.bind(this));
 	        }
 	    }, {
 	        key: 'stop',
 	        value: function stop() {
-	            this.running = false;
-	            raf.cancel(this.handle);
-	            delete this.handle;
+	            this._running = false;
+	            raf.cancel(this._handle);
+	            delete this._handle;
 	        }
 	    }]);
 	

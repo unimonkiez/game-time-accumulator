@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './src/game-time-accumulator.js',
     output: {
         library: 'GameTimeAccumulator',
         libraryTarget: 'umd',
