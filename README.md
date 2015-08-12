@@ -1,5 +1,6 @@
 # game-time-accumulator
 A great class to manage updates to your own game using time accumulator principle.
+Works on browser + NodeJS (check [this](https://github.com/chrisdickinson/raf) for compability table)
 
 ### Install
 ```npm install game-time-accumulator``` or ```bower install game-time-accumulator```.
@@ -36,6 +37,6 @@ game.start();
 **stepSize** - (Number, default 16 - ~60fps) - Milliseconds of step to loop
 
 ## Functions
-```start()``` - Start the game
+```start()``` - Starts the game
 
-```stop()``` - Start the game
+```stop()``` - stops the game
