@@ -24,7 +24,7 @@ var drawFn = function(){
   player.draw(ctx);
 }
 
-var game = new GameTimeAccumulator(stepFn, drawFn);
+var game = new GameTimeAccumulator(stepFn, drawFn, 200);
 game.start();
 
 ```
