@@ -39,4 +39,4 @@ game.start();
 ## Functions
 ```start()``` - Starts the game
 
-```stop()``` - stops the game
+```stop()``` - Stops the game
