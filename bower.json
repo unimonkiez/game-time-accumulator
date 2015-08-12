@@ -6,6 +6,7 @@
   "main": "dist/game-time-accumulator.js",
   "keywords": [
     "es6",
+    "game",
     "time",
     "accumulator",
     "class"
