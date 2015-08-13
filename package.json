@@ -1,6 +1,6 @@
 {
   "name": "game-time-accumulator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "game-time-accumulator class for creating a game",
   "main": "dist/game-time-accumulator.js",
   "dependencies": {},
