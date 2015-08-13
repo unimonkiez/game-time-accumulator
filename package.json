@@ -1,10 +1,11 @@
 {
   "name": "game-time-accumulator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "game-time-accumulator class for creating a game",
   "main": "dist/game-time-accumulator.js",
   "dependencies": {},
   "devDependencies": {
+    "babel": "^5.8.21",
     "babel-core": "^5.8.22",
     "babel-loader": "^5.3.2",
     "jasmine": "^2.3.2",
@@ -15,7 +16,7 @@
   },
   "engines": {},
   "scripts": {
-    "build": "webpack && uglifyjs dist/game-time-accumulator.js -o dist/game-time-accumulator.min.js",
+    "build": "webpack && uglifyjs dist/game-time-accumulator-bundle.js -o dist/game-time-accumulator-bundle.min.js && babel src/game-time-accumulator.js --out-file dist/game-time-accumulator.js && uglifyjs dist/game-time-accumulator.js -o dist/game-time-accumulator.min.js",
     "test": "jasmine"
   },
   "repository": {
