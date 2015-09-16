@@ -7,7 +7,7 @@ module.exports = {
         library: 'GameTimeAccumulator',
         libraryTarget: 'umd',
         path: __dirname,
-        filename: 'dist/game-time-accumulator.js'
+        filename: 'dist/game-time-accumulator-bundle.js'
     },
     module: {
         loaders: [{

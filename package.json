@@ -15,7 +15,7 @@
   },
   "engines": {},
   "scripts": {
-    "build": "webpack && uglifyjs dist/game-time-accumulator.js -o dist/game-time-accumulator.min.js",
+    "build": "webpack && uglifyjs dist/game-time-accumulator-bundle.js -o dist/game-time-accumulator-bundle.min.js && babel src/game-time-accumulator.js --out-file dist/game-time-accumulator.js && uglifyjs dist/game-time-accumulator.js -o dist/game-time-accumulator.min.js",
     "test": "jasmine"
   },
   "repository": {
