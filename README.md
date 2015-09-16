@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/game-time-accumulator.svg)](http://badge.fury.io/js/game-time-accumulator)
 # game-time-accumulator
 A great class to manage updates to your own game using time accumulator principle.
 Works on browser + NodeJS (check [this](https://github.com/chrisdickinson/raf) for compability table)
